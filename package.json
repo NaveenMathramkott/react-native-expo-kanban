@@ -1,20 +1,21 @@
 {
   "name": "react-native-expo-kanban",
   "version": "1.0.0",
-  "description": "kanban board for react native screens",
+  "description": "kanban board for react native expo screens",
   "keywords": [
     "react-native",
     "expo",
+    "react",
     "kanban",
     "drag-and-drop"
   ],
-  "homepage": "https://github.com/NaveenMathramkott/react-native-kanban#readme",
+  "homepage": "https://github.com/NaveenMathramkott/react-native-expo-kanban#readme",
   "bugs": {
-    "url": "https://github.com/NaveenMathramkott/react-native-kanban/issues"
+    "url": "https://github.com/NaveenMathramkott/react-native-expo-kanban/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NaveenMathramkott/react-native-kanban.git"
+    "url": "git+https://github.com/NaveenMathramkott/react-native-expo-kanban.git"
   },
   "license": "MIT",
   "author": "naveen mathramkott",
