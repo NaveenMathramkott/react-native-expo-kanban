@@ -22,7 +22,7 @@ export interface PriorityColors {
     [key: string]: string
 }
 
-export interface BoardStatus {
+export interface BoardHeader {
     id: number
     status: string
     color: string
@@ -53,7 +53,7 @@ export interface BoardCardData {
 }
 
 interface ReactNativeKanbanBoardProps {
-    boardHeaderData: BoardStatus[]
+    boardHeaderData: BoardHeader[]
     boardCardData: BoardCardData
     onCardPress?: (data: CardData) => void
     onBoardChange?: (data: any) => void
@@ -504,7 +504,7 @@ const ReactNativeKanbanBoard = ({
         )
     }
 
-    const renderBoard = (board: BoardStatus) => {
+    const renderBoard = (board: BoardHeader) => {
         if (!boardRefs.current[board.id]) {
             boardRefs.current[board.id] = React.createRef<View>()
         }
