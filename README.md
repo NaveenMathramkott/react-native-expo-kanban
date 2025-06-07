@@ -3,7 +3,7 @@
 <div>
 <div align="center">
   <br />
-    <a href="https://github.com/NaveenMathramkott/Ryvon" target="_blank">
+    <a href="https://github.com/NaveenMathramkott/react-native-expo-kanban" target="_blank">
         <img src="./demo/demo.gif" height="500" style="border-radius: 20px;" >
     </a>
   <br />
