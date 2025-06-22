@@ -21,7 +21,7 @@ export default function Index() {
   })
   const [boardCardData, setBoardCardData] = useState({
     "1": {
-      leads: [
+      columnData: [
         {
           id: 101,
           first_name: "John",
@@ -60,7 +60,7 @@ export default function Index() {
       total_count: 2,
     },
     "2": {
-      leads: [
+      columnData: [
         {
           id: 201,
           first_name: "Mike",
@@ -82,7 +82,7 @@ export default function Index() {
       total_count: 1,
     },
     "3": {
-      leads: [],
+      columnData: [],
       total_count: 0,
     },
 
@@ -132,7 +132,7 @@ export default function Index() {
 
     setBoardCardData(prev => ({
       [currentBoardId]: {
-        leads: [...(prev[currentBoardId]?.leads || []), newLead],
+        columnData: [...(prev[currentBoardId]?.columnData || []), newLead],
         total_count: (prev[currentBoardId]?.total_count || 0) + 1,
       },
       ...prev,
