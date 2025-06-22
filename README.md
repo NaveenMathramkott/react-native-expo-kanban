@@ -65,7 +65,7 @@ const boardHeaderData = [
 ];
 const [boardCardData, setBoardCardData] = useState({
   "1": {
-    leads: [
+    columnData: [
       {
         id: 101,
         first_name: "John",
@@ -104,7 +104,7 @@ const [boardCardData, setBoardCardData] = useState({
     total_count: 2,
   },
   "2": {
-    leads: [
+    columnData: [
       {
         id: 201,
         first_name: "Mike",
@@ -126,7 +126,7 @@ const [boardCardData, setBoardCardData] = useState({
     total_count: 1,
   },
   "3": {
-    leads: [],
+    columnData: [],
     total_count: 0,
   },
 });
@@ -184,7 +184,7 @@ interface CardData {
 
 interface BoardCardData {
   [boardId: string]: {
-    leads: CardData[];
+    columnData: CardData[];
     total_count: number;
   };
 }

@@ -14,55 +14,8 @@ import {
     View,
 } from "react-native"
 import { runOnJS } from "react-native-reanimated"
+import { BoardHeader, CardData, ReactNativeKanbanBoardProps } from "./types"
 
-export interface PriorityColors {
-    high: string
-    medium: string
-    low: string
-    [key: string]: string
-}
-
-export interface BoardHeader {
-    id: number
-    status: string
-    color: string
-}
-
-export interface CardData {
-    id: number
-    first_name: string
-    last_name: string
-    company: string
-    email: string
-    phone: string
-    notes?: string
-    status?: string
-    priority: string
-    created_on: string
-    assigned_to: {
-        first_name: string
-        last_name?: string
-    }
-}
-
-export interface BoardCardData {
-    [key: string]: {
-        leads: CardData[]
-        total_count: number
-    }
-}
-
-interface ReactNativeKanbanBoardProps {
-    boardHeaderData: BoardHeader[]
-    boardCardData: BoardCardData
-    onCardPress?: (data: CardData) => void
-    onBoardChange?: (data: any) => void
-    onAddCard?: (boardId: number) => void
-    onDeleteLead?: (leadId: number, boardId: number) => Promise<void>
-    cardStyle?: object
-    priorityColors?: PriorityColors
-    isLoading?: boolean
-}
 
 const ReactNativeKanbanBoard = ({
     boardHeaderData = [],
@@ -143,7 +96,7 @@ const ReactNativeKanbanBoard = ({
         try {
             // Finding the target board
             const sourceBoard = boardCardData[sourceBoardId]
-            const itemIndex = sourceBoard.leads.findIndex(
+            const itemIndex = sourceBoard.columnData.findIndex(
                 (item) => item.id === itemId
             )
 
@@ -151,20 +104,20 @@ const ReactNativeKanbanBoard = ({
                 throw new Error("Item not found")
             }
 
-            const itemToMove = sourceBoard.leads[itemIndex]
+            const itemToMove = sourceBoard.columnData[itemIndex]
 
             const newData = {
                 ...boardCardData,
                 [sourceBoardId]: {
                     ...boardCardData[sourceBoardId],
-                    leads: boardCardData[sourceBoardId].leads.filter(
+                    columnData: boardCardData[sourceBoardId].columnData.filter(
                         (item) => item.id !== itemId
                     ),
                     total_count: boardCardData[sourceBoardId].total_count - 1,
                 },
                 [targetBoardId]: {
                     ...boardCardData[targetBoardId],
-                    leads: [...boardCardData[targetBoardId].leads, itemToMove],
+                    columnData: [...boardCardData[targetBoardId].columnData, itemToMove],
                     total_count: boardCardData[targetBoardId].total_count + 1,
                 },
             }
@@ -510,7 +463,7 @@ const ReactNativeKanbanBoard = ({
         }
 
         const kanbanCardData = boardCardData[board.id] || {
-            leads: [],
+            columnData: [],
             total_count: 0,
         }
 
@@ -585,7 +538,7 @@ const ReactNativeKanbanBoard = ({
                         },
                     ]}
                 >
-                    {kanbanCardData?.leads?.map((item) => (
+                    {kanbanCardData?.columnData?.map((item) => (
                         <KanbanCard key={item.id.toString()} item={item} boardId={board.id} />
                     ))}
                 </ScrollView>
