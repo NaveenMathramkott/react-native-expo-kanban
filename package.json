@@ -7,7 +7,12 @@
     "expo",
     "react",
     "kanban",
-    "drag-and-drop"
+    "drag-and-drop",
+    "module",
+    "typescript",
+    "kanban",
+    "board",
+    "drag"
   ],
   "homepage": "https://github.com/NaveenMathramkott/react-native-expo-kanban#readme",
   "bugs": {
@@ -19,7 +24,7 @@
   },
   "license": "MIT",
   "author": "naveen mathramkott",
-  "types": "src/index.tsx",
+  "types": "src/types.tsx",
   "main": "src/index.tsx",
   "files": [
     "src/**/*"
