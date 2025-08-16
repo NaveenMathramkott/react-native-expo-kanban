@@ -2,9 +2,9 @@
 
 <div align="center">
   <br />
-  <a href="https://github.com/NaveenMathramkott/react-native-expo-kanban" target="_blank">
-    <img src="./demo/demo2.gif" height="500" style="border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin: 8px;" >
-    <img src="./demo/demo.gif" height="500" style="border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin: 8px;" >
+  <a href="https://github.com/NaveenMathramkott/react-native-expo-kanban" target="_blank" style="display:flex; width:90vw">
+    <img src="./demo/demo2.gif" height="500" style="border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin: 8px; width:50%" >
+    <img src="./demo/demo.gif" height="500" style="border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin: 8px;width:50%" >
   </a>
   <br /><br />
   
