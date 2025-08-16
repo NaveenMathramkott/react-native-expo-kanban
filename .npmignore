@@ -1,0 +1,18 @@
+# local env files
+.env*.local
+
+# typescript
+*.tsbuildinfo
+
+app-example
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# dependencies
+node_modules/
+package-lock.json
+.git
+

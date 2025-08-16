@@ -1,43 +1,37 @@
-# React-Native-Expo-Kanban
+# React Native Expo Kanban Board
 
-<div>
 <div align="center">
   <br />
-    <a href="https://github.com/NaveenMathramkott/react-native-expo-kanban" target="_blank">
-        <img src="./demo/demo.gif" height="500" style="border-radius: 20px;" >
-    </a>
-  <br />
-
+  <a href="https://github.com/NaveenMathramkott/react-native-expo-kanban" target="_blank">
+    <img src="./demo/demo2.gif" height="500" style="border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin: 8px;" >
+    <img src="./demo/demo.gif" height="500" style="border-radius: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); margin: 8px;" >
+  </a>
+  <br /><br />
+  
   <div>
-    <img src="https://img.shields.io/badge/-React_Native-black?style=for-the-badge&logoColor=white&logo=react&color=000000" alt="reactnative" />
-    <img src="https://img.shields.io/badge/-Expo-black?style=for-the-badge&logoColor=white&logo=expo&color=000020" alt="expo" />
-     </div>
+    <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Native" />
+    <img src="https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white" alt="Expo" />
+    <img src="https://img.shields.io/npm/v/react-native-expo-kanban?style=for-the-badge" alt="npm version" />
+    <img src="https://img.shields.io/npm/dt/react-native-expo-kanban?style=for-the-badge" alt="npm downloads" />
   </div>
-
-<h3 align="center">React Native Expo Kanban</h3>
-
-   <div align="center">
-An interactive Kanban board component for React Native applications. Perfect for task management, sales pipelines, project tracking, and any workflow that benefits from visual organization.
-    
 </div>
+
+<h1 align="center">Interactive Kanban Board for React Native</h1>
+
+<p align="center">
+  A feature-rich, customizable Kanban board component designed specifically for React Native applications with Expo. Perfect for task management, sales pipelines, project tracking, and any workflow that benefits from visual organization.
+</p>
 
 ## Features
 
-- 🎨 Customizable - Colors, styles, and behavior can be easily customized
-
-- 📱 Mobile-friendly - Designed specifically for React Native
-
-- ✋ Interactive - Drag-and-drop cards between columns
-
-- ➕ Add items - Built-in support for adding new items to any column
-
-- 🗑️ Delete items - Easy item deletion with confirmation
-
-- 🏷️ Priority indicators - Visual priority levels for better organization
-
-- 📊 Count tracking - Automatic count of items per column
-
-- 🔄 State management - Easy integration with your existing state
+- **Drag-and-Drop Interface** - Smooth card movement between columns
+- **Fully Customizable** - Colors, styles, and behavior tailored to your app
+- **Responsive Design** - Works flawlessly across mobile devices
+- **Priority Indicators** - Visual cues for task importance
+- **Real-time Counts** - Automatic tracking of items per column
+- **CRUD Operations** - Built-in support for adding, moving, and deleting items
+- **TypeScript Support** - Fully typed components and props
+- **Performance Optimized** - Built with Reanimated for buttery-smooth interactions
 
 ## Installation
 
@@ -49,6 +43,8 @@ react-native-reanimated must be also installed: https://docs.swmansion.com/react
 
 ## Usage
 
+##### Refer the Demo page inside src to Use the ReactNativeKanbanBoard
+
 Import the necessary components and types:
 
 ```bash
@@ -58,19 +54,88 @@ import ReactNativeKanbanBoard from "react-native-expo-kanban";
 Define the columns and cards:
 
 ```tsx
-const boardHeaderData = [
-  { id: 1, status: "New", color: "#FF6B6B", is_end: false },
-  { id: 2, status: "Contacted", color: "#4ECDC4", is_end: false },
-  { id: 3, status: "Qualified", color: "#45B7D1", is_end: false },
-];
-const [boardCardData, setBoardCardData] = useState({
-  "1": {
-    columnData: [
+const columnData: KanbanBoardProps<ItemParams, HeaderParams>["columnData"] = [
+  {
+    header: { title: "Enquiry", subtitle: "Target 20 leads" },
+    items: [
       {
-        id: 101,
-        first_name: "John",
-        last_name: "Doe",
-        email: "john.doe@example.com",
+        id: "101",
+        first_name: "Bhageerathan",
+        last_name: "Pillai",
+        email: "Bhageerathan@Pillai.com",
+        phone: "+1 555-123-4567",
+        company: "Muthalali Inc.",
+        created_on: new Date().toISOString(),
+        priority: "high",
+        status: "New",
+        notes: "Interested in premium package",
+        assigned_to: {
+          first_name: "Ramanan",
+          last_name: "",
+          profile_pic: null,
+        },
+      },
+      {
+        id: "102",
+        first_name: "Kittunni",
+        last_name: "",
+        email: "kittunni@kilukkam.com",
+        phone: "+1 555-123-4567",
+        company: "Army Inc.",
+        created_on: new Date().toISOString(),
+        priority: "high",
+        status: "New",
+        notes: "Interested in premium package",
+        assigned_to: {
+          first_name: "Pankajakshan",
+          last_name: "Pillai",
+          profile_pic: null,
+        },
+      },
+      {
+        id: "103",
+        first_name: "Mamachan",
+        last_name: "",
+        email: "Mamachan@vellimoonga.com",
+        phone: "+1 555-123-4567",
+        company: "Panchayath Inc.",
+        created_on: new Date().toISOString(),
+        priority: "high",
+        status: "New",
+        notes: "Interested in premium package",
+        assigned_to: {
+          first_name: "Kuttan",
+          last_name: "Thampuran",
+          profile_pic: null,
+        },
+      },
+    ],
+  },
+  {
+    header: { title: "Interested", subtitle: "Make sure fixed" },
+    items: [
+      {
+        id: "104",
+        first_name: "Shaji",
+        last_name: "Pappan",
+        email: "ShajiPappan@Aadu.com",
+        phone: "+1 555-123-4567",
+        company: "Kalasamithi Inc.",
+        created_on: new Date().toISOString(),
+        priority: "high",
+        status: "New",
+        notes: "Interested in premium package",
+        assigned_to: {
+          first_name: "Eppan",
+          last_name: "Pappachi",
+          profile_pic: null,
+        },
+      },
+      {
+        id: "105",
+        first_name: "Pachalam",
+        last_name: "Bhasi",
+        email: "Pachalam@bhasi.com",
         phone: "+1 555-123-4567",
         company: "Acme Inc.",
         created_on: new Date().toISOString(),
@@ -78,118 +143,169 @@ const [boardCardData, setBoardCardData] = useState({
         status: "New",
         notes: "Interested in premium package",
         assigned_to: {
-          first_name: "Alex",
-          last_name: "Johnson",
+          first_name: "Goerge",
+          last_name: "Kutty",
           profile_pic: null,
         },
       },
+    ],
+  },
+  {
+    header: { title: "Sold", subtitle: "Check on Reports" },
+    items: [
       {
-        id: 102,
-        first_name: "Sarah",
-        last_name: "Smith",
-        email: "sarah.smith@example.com",
-        phone: "+1 555-987-6543",
-        company: "Globex Corp",
+        id: "106",
+        first_name: "Mahesh",
+        last_name: "Bhavana",
+        email: "mahesh@bhavana.com",
+        phone: "+1 555-123-4567",
+        company: "Bhavana Studio Inc.",
         created_on: new Date().toISOString(),
-        priority: "medium",
+        priority: "high",
         status: "New",
-        notes: "Requested demo next week",
+        notes: "Interested in premium package",
         assigned_to: {
-          first_name: "Taylor",
-          last_name: "Wilson",
+          first_name: "Chakkochi",
+          last_name: "Anakattill",
           profile_pic: null,
         },
       },
-    ],
-    total_count: 2,
-  },
-  "2": {
-    columnData: [
       {
-        id: 201,
-        first_name: "Mike",
-        last_name: "Brown",
-        email: "mike.brown@example.com",
-        phone: "+1 555-456-7890",
-        company: "Tech Solutions",
+        id: "107",
+        first_name: "Bonny",
+        last_name: "",
+        email: "bonny@kumbalangi.com",
+        phone: "+1 555-123-4567",
+        company: "Brothers Inc.",
         created_on: new Date().toISOString(),
-        priority: "low",
-        status: "Contacted",
-        notes: "Follow up in 2 days",
+        priority: "high",
+        status: "New",
+        notes: "Interested in premium package",
         assigned_to: {
-          first_name: "Jordan",
-          last_name: "Lee",
+          first_name: "Dasan",
+          last_name: "",
+          profile_pic: null,
+        },
+      },
+      {
+        id: "108",
+        first_name: "Biju",
+        last_name: "Paulose",
+        email: "biju@paulose.com",
+        phone: "+1 555-123-4567",
+        company: "Ernakuam Station Inc.",
+        created_on: new Date().toISOString(),
+        priority: "high",
+        status: "New",
+        notes: "Interested in premium package",
+        assigned_to: {
+          first_name: "Ajooran",
+          last_name: "",
           profile_pic: null,
         },
       },
     ],
-    total_count: 1,
   },
-  "3": {
-    columnData: [],
-    total_count: 0,
-  },
-});
+];
 ```
 
 Render the Kanban Board component:
 
 ```tsx
 <ReactNativeKanbanBoard
-  boardHeaderData={boardHeaderData}
-  boardCardData={boardCardData}
-  onBoardChange={setBoardCardData}
+  columnData={columnDataStages}
+  renderItem={renderItem}
+  renderHeader={renderHeader}
+  columnHeaderStyle={styles.columnHeader}
+  columnContainerStyle={styles.columnContainer}
+  gapBetweenColumns={8}
+  columnWidth={SCREEN_WIDTH}
+  columnContainerStyleOnDragHover={styles.columnContainerWhenPotenialDragTo}
+  onDragEnd={onDragEnd}
 />
 ```
 
 ### Props
 
-| Prop            | Type                                      | Default | Description                              | Required |
-| --------------- | ----------------------------------------- | ------- | ---------------------------------------- | -------- |
-| boardHeaderData | BoardHeader[ ]                            | []      | Defines the columns in your Kanban board | Yes      |
-| boardCardData   | BoardCardData                             | {}      | Contains the cards for each column       | Yes      |
-| onBoardChange   | (newData: BoardCardData) => void          |         | Callback when board data changes         | Yes      |
-| onCardPress     | (card: CardData) => void                  |         | Callback when a card is pressed          | No       |
-| onAddCard       | (boardId: string) => void                 |         | Callback when add button is pressed      | No       |
-| onDeleteLead    | (leadId: string, boardId: string) => void |         | Callback when delete is requested        | No       |
-| priorityColors  | Record<string, string>                    |         | Custom colors for priority levels        | No       |
-| cardStyle       | ViewStyle                                 |         | Custom styles for cards                  | No       |
+| Prop                          | Type                                                                                   | Default Value | Description                                                             | Required |
+| :---------------------------- | :------------------------------------------------------------------------------------- | :------------ | :---------------------------------------------------------------------- | :------- |
+| `columnData`                  | `columnData<T extends ItemType, K>[]`                                                  | []            | An array of columnData objects.                                         | Yes      |
+| `renderItem`                  | `(props: T, isDragged?: boolean) => JSX.Element`                                       |               | Function component item within a columnData.                            | Yes      |
+| `renderHeader`                | `(props: K) => JSX.Element`                                                            |               | Function component header for each columnData.                          | Yes      |
+| `columnHeaderStyle`           | `ViewStyle`                                                                            | {}            | Style for the Header of the each Kanban boards.                         | No       |
+| `columnContainerStyle`        | `ViewStyle`                                                                            | {}            | Style for the container of the Kanban Card.                             | No       |
+| `columnContentContainerStyle` | `ViewStyle`                                                                            | {}            | Style for the content container.                                        | No       |
+| `gapBetweenColumns`           | `number`                                                                               | 8             | The horizontal gap between the ColumnData Cards.                        | No       |
+| `columnContainerStyleOnDrag`  | `ViewStyle`                                                                            | 0.7           | Style applied to a columnData container when an item is being dragged.  | No       |
+| `onDragEnd`                   | `(params: { fromColumnIndex: number; toColumnIndex: number; itemId: string }) => void` | undefined     | Callback function called when an item is dropped into a new columnData. | Yes      |
 
 ### Types
 
 ```tsx
-interface BoardStatus {
-  id: string;
-  status: string;
-  color: string;
-  is_end: boolean;
-}
+export type columnDataType<T, K> = {
+  header: K;
+  items: T[];
+};
 
-interface CardData {
+export type ItemType = { id: string };
+
+export type State = {
+  wixImage: boolean;
+};
+
+export type HeaderParams = {
+  title: string;
+  subtitle?: string;
+};
+
+export type ItemParams = {
   id: string;
   first_name: string;
   last_name: string;
-  company: string;
   email: string;
   phone: string;
-  notes?: string;
-  status?: string;
-  priority: string;
+  company: string;
   created_on: string;
+  priority: string;
+  status: string;
+  notes: string;
   assigned_to: {
     first_name: string;
-    last_name?: string;
+    last_name: string;
+    profile_pic: null;
   };
+};
+
+export interface DraggedCardProps<T> {
+  id: string;
+  y: number;
+  x: number;
+  width: number;
+  props: T;
+  columnIndex: number;
 }
 
-interface BoardCardData {
-  [boardId: string]: {
-    columnData: CardData[];
-    total_count: number;
-  };
+export interface KanbanBoardProps<T extends ItemType, K> {
+  columnData: columnDataType<T, K>[];
+  renderItem: (props: T, isDragged?: boolean) => JSX.Element;
+  renderHeader: (props: K) => JSX.Element;
+  onDragEnd: (params: {
+    fromColumnIndex: number;
+    toColumnIndex: number;
+    itemId: string;
+  }) => void;
+  containerStyle?: ViewStyle;
+  contentContainerStyle?: ViewStyle;
+  columnHeaderStyle?: ViewStyle;
+  columnContainerStyle?: ViewStyle;
+  columnContainerStyleOnDrag?: ViewStyle;
+  columnWidth?: number;
+  gapBetweenColumns?: number;
 }
 ```
 
-#### Sharing is caring... until someone finds out. Happy Coding
+#### Sharing is caring... until someone finds out❤️.
+
+### Happy Coding
 
 ---
