@@ -1,0 +1,46 @@
+{
+  "name": "react-native-expo-kanban",
+  "version": "1.0.4",
+  "description": "kanban board for react native expo screens",
+  "keywords": [
+    "react-native",
+    "expo",
+    "react",
+    "kanban",
+    "drag-and-drop",
+    "module",
+    "typescript",
+    "kanban",
+    "board",
+    "react",
+    "drag"
+  ],
+  "homepage": "https://github.com/NaveenMathramkott/react-native-expo-kanban#readme",
+  "bugs": {
+    "url": "https://github.com/NaveenMathramkott/react-native-expo-kanban/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NaveenMathramkott/react-native-expo-kanban.git"
+  },
+  "license": "MIT",
+  "author": "naveen mathramkott",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "peerDependencies": {
+    "lodash": "^4.x.x",
+    "react": "*",
+    "react-native": "*",
+    "react-native-gesture-handler": "^2.x.x",
+    "react-native-reanimated": "^3.x.x"
+  },
+  "yalcSig": "f5edf4dd0c7c6a16e488d202f2d310a6"
+}
