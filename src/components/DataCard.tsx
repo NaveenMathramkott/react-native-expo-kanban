@@ -26,7 +26,7 @@ export const DataCard = React.memo(<_, K>({ item, setDragCard, renderItem, itemC
  }
 
  const onLayout = (event: LayoutChangeEvent) => {
-  event.currentTarget.measure((_x: number, _y: number, width: number, _height: number, pageX: number, pageY: number) => {
+  (event.currentTarget as any).measure((_x: number, _y: number, width: number, _height: number, pageX: number, pageY: number) => {
    positionRef.current = { x: pageX, y: pageY, width }
   })
  }
