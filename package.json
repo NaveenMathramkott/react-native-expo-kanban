@@ -15,7 +15,7 @@
     "react",
     "drag"
   ],
-  "homepage": "https://github.com/NaveenMathramkott/react-native-expo-kanban#readme",
+  "homepage": "https://rnkanban.vercel.app",
   "bugs": {
     "url": "https://github.com/NaveenMathramkott/react-native-expo-kanban/issues"
   },
