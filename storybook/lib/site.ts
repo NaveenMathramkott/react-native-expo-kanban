@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "React Native Expo Kanban",
   shortName: "Kanban",
-  version: "1.0.5",
+  version: "1.0.7",
   description:
     "A feature-rich, customizable Kanban board component for React Native applications built with Expo.",
   github: "https://github.com/NaveenMathramkott/react-native-expo-kanban",
