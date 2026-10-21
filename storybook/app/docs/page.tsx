@@ -72,7 +72,7 @@ export default function IntroductionPage() {
       />
 
       <div className="flex flex-wrap items-center gap-2">
-        <Badge variant="brand">v1.0.5</Badge>
+        <Badge variant="brand">v1.0.8</Badge>
         <Badge variant="outline">MIT license</Badge>
         <Badge variant="outline">Expo</Badge>
         <Badge variant="outline">TypeScript</Badge>
@@ -87,9 +87,9 @@ export default function IntroductionPage() {
         <p>
           The package exports a single default component,{" "}
           <InlineCode>ReactNativeKanbanBoard</InlineCode>. You describe your
-          board as an array of columns, each with a header object and an array of
-          items. You render each card and header with your own components. When a
-          card is dropped into a different column, the board calls{" "}
+          board as an array of columns, each with a header object and an array
+          of items. You render each card and header with your own components.
+          When a card is dropped into a different column, the board calls{" "}
           <InlineCode>onDragEnd</InlineCode> with the source index, destination
           index, and item id.
         </p>
@@ -212,8 +212,8 @@ export default function IntroductionPage() {
         description="The package is open source and MIT licensed."
       >
         <p>
-          The current published version is{" "}
-          <InlineCode>1.0.5</InlineCode>. Source, issues, and releases live on{" "}
+          The current published version is <InlineCode>1.0.5</InlineCode>.
+          Source, issues, and releases live on{" "}
           <Link
             href="https://github.com/NaveenMathramkott/react-native-expo-kanban"
             target="_blank"
